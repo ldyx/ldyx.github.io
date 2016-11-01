@@ -1,0 +1,712 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="docker," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Carina 是Rackspace旗下的一个网站，提供了Docker服务。内存4G，硬盘60G。大方之极！
+
+一、注册点击注册。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费容器之carina">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/22.html">
+<meta property="og:site_name" content="免费资源分享">
+<meta property="og:description" content="Carina 是Rackspace旗下的一个网站，提供了Docker服务。内存4G，硬盘60G。大方之极！
+
+一、注册点击注册。">
+<meta property="og:image" content="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_003.jpg?530x402_130">
+<meta property="og:image" content="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_002.jpg?645x63_130">
+<meta property="og:updated_time" content="2016-11-01T11:38:03.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="免费容器之carina">
+<meta name="twitter:description" content="Carina 是Rackspace旗下的一个网站，提供了Docker服务。内存4G，硬盘60G。大方之极！
+
+一、注册点击注册。">
+<meta name="twitter:image" content="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_003.jpg?530x402_130">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6347928475260683000',
+      author: '博主大人'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/28/22.html"/>
+
+
+  <title> 免费容器之carina | 免费资源分享 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5e4566013c7bbd72d3e4f7977d4fd431";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">免费资源分享</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                免费容器之carina
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-28T08:53:24+08:00" content="2016-10-28">
+              2016-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术教程/" itemprop="url" rel="index">
+                    <span itemprop="name">技术教程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/28/22.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/22.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="https://getcarina.com/" target="_blank" rel="external">Carina</a> 是Rackspace旗下的一个网站，提供了Docker服务。内存4G，硬盘60G。大方之极！</p>
+</blockquote>
+<h4 id="一、注册"><a href="#一、注册" class="headerlink" title="一、注册"></a>一、注册</h4><p><a href="https://getcarina.com" target="_blank" rel="external">点击</a>注册。<br><a id="more"></a><br>注册很简单，但是carina要求手机号码验证，国内手机不一定能够收到验证码。这时就要用到<a href="http://mvper.cn/index.php/archives/258.html" target="_blank" rel="external">虚拟手机号码</a>了。</p>
+<p>下面演示如何搭建shadowsocks</p>
+<h4 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h4><p><strong>本地配置</strong></p>
+<p>1、首先Add Cluster,为cluster起一个名字，这里取名为shadowsocks。等到running……变为active后表明成功运行。</p>
+<p><a href="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_003.jpg?530x402_130" target="_blank" rel="external"><img src="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_003.jpg?530x402_130" alt=""></a></p>
+<p>2、点击“Get access”，获取shadowsocks.zip文件。解压</p>
+<p>3、下载docker命令行工具</p>
+<p>下载地址：<a href="https://get.docker.com/builds/Windows/x86_64/docker-1.10.1.exe" target="_blank" rel="external">https://get.docker.com/builds/Windows/x86_64/docker-1.10.1.exe</a></p>
+<p>之后将该文件重命名为docker.exe 并将其移动到shadowsocks文件夹。</p>
+<p>4、打开shadowsocks文件夹，在win8下，点击左上角的“文件”-“打开命令提示符（p）”-“打开命令提示符（p）”,进入到该目录的命令提示符下。当然你也可以使用cd命令切换到该目录下。</p>
+<p>5、执行</p>
+<p>初始化一下环境变量</p>
+<div class="dp-highlighter"><br><br>1.  docker.cmd<br></div><br>测试能否成功连接<br><div class="dp-highlighter"><br><br>1.  docker.exe info<br></div><br>连接成功会跳出容器信息<br><br>创建网络<br><div class="dp-highlighter"><br><br>1.  docker.exe network create wordnet<br></div><br>创建shadowsocks容器<br><div class="dp-highlighter"><br><br>1.  docker.exe run –detach –name shadowsocks –net wordnet –publish <span class="number">8989</span>:<span class="number">8989</span> oddrationale/docker-shadowsocks -s <span class="number">0.0</span>.<span class="number">0.0</span> -p <span class="number">8989</span> -k 123456 -m aes-<span class="number">256</span>-cfb<br></div><br>查看shadowsocks的ip地址和端口号<br><div class="dp-highlighter"><br><br>1.  docker.exe port shadowsocks<br></div><br>或者也可以<br><div class="dp-highlighter"><br><br>1.  docker.exe ps<br></div><br>所以最后在客户端配置如下：<br><br>ip地址：ip<br><br>端口号：8989<br><br>密码：123456<br><br>加密方式：aes-256-cfb<br><br>本地端口：1080<br><br><strong>vps配置</strong><br><br>使用安装有docker的vps配置。这里推荐使用coding.net的ide配置。<br><br>直接配置：<a href="https://ide.coding.net/ws/?ownerName=duwan&amp;projectName=WordPress&amp;isTry=true" target="_blank" rel="external">点此</a><br><br>点击左下角的 【终端】，打开控制台。复制方法为：shift+ctrl+v<br><br>安装Carina<br><div class="dp-highlighter"><br><br>1.  mkdir $HOME/bin<br>2.  curl -L https:<span class="comment">//download.getcarina.com/carina/latest/Linux/x86_64/carina -o $HOME/bin/carina</span><br>3.  chmod u+x $HOME/bin/carina<br></div><br><code>检查是否安装成功</code><br><div class="dp-highlighter"><br><br>1.  carina –help<br></div><br>安装docker环境<br><div class="dp-highlighter"><br><br>1.  curl -sL https:<span class="comment">//download.getcarina.com/dvm/latest/install.sh | sh</span><br>2.  source $HOME/.dvm/dvm.sh<br>3.  dvm install <span class="number">1.9</span>.<span class="number">1</span><br>4.  ln -s $HOME/.dvm/bin/docker/<span class="number">1.9</span>.<span class="number">1</span>/docker $HOME/bin/docker<br></div><br><div class="crayon-line">检查docker是否安装成功</div><br><div class="dp-highlighter"><br><br>1.  docker -v<br></div><br><div class="crayon-line">出现版本信息表示成功</div><br><div class="crayon-line">导入carina个人信息</div><br><div class="dp-highlighter"><br><br>1.  export CARINA_USERNAME=xxxxxxxxx<span class="annotation">@hotmail</span>.com<br>2.  export CARINA_APIKEY=b50ba1c1a6634a6123a8f4ab9cb7cd<br></div><br><div class="crayon-line">CARINA_USERNAME：你注册carina的邮箱</div><br><div class="crayon-line">CARINA_APIKEY：点击界面的右上角你的邮箱，能看到你的api key</div><br><div class="crayon-line">查看所有的cluster</div><br><div class="dp-highlighter"><br><br>1.  carina list<br></div><br><div class="crayon-line">如我的：</div><br><div class="crayon-line"><a href="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_002.jpg?645x63_130" target="_blank" rel="external"><img src="http://image18.poco.cn/mypoco/myphoto/20161023/14/183664260201610231404234134632828183_002.jpg?645x63_130" alt=""></a></div><br><div class="crayon-line"></div><br><div class="crayon-line">新建cluster,取名为shadowsocks</div><br><div class="dp-highlighter"><br><br>1.  carina create –wait shadowsocks<br></div><br>使用该cluster<br><div class="dp-highlighter"><br><br>1.  eval $(carina env wordpress)<br></div><br>创建shadowsocks<br><div class="dp-highlighter"><br><br>1.  docker run -d -p <span class="number">8388</span> oddrationale/docker-shadowsocks -s <span class="number">0.0</span>.<span class="number">0.0</span> -p <span class="number">8388</span> -k <span class="number">123456</span> -m aes-<span class="number">256</span>-cfb<br></div><br><div id="crayon-57afec649080a094801378-49" class="crayon-line"><span class="crayon-c">执行命令，查看我们的IP和端口</span></div><br><div class="dp-highlighter"><br><br>1.  docker ps<br></div><br><div id="crayon-57afec649080a094801378-51" class="crayon-line"> 其中一部分输出内容：<br>172.99.79.148:32768-&gt;8388/tcp<br><div class="crayon-line">所以最后客户端的配置为：</div><br><div class="crayon-line"></div><br><div class="crayon-line">ip地址：172.99.79.148</div><br><div class="crayon-line">端口：32768</div><br><div class="crayon-line">密码：123456</div><br><div class="crayon-line">加密方式：aes-256-cfb</div><br></div><br><div class="crayon-line"> 本地端口：1080</div><br><div class="crayon-line"></div>
+
+<h4 id="三、搭建wordpress"><a href="#三、搭建wordpress" class="headerlink" title="三、搭建wordpress"></a>三、搭建wordpress</h4><p>1.新建一个cluster</p>
+<div class="dp-highlighter">
+
+<ol>
+<li><p>carina create –wait wordpress<br></p></li></ol></div><br>2.创建一个网络<p></p>
+<div class="dp-highlighter">
+
+<li><p>docker network create mynetwork<br></p></li></div><br>3.运行mysql实例<p></p>
+<div class="dp-highlighter">
+
+<li><p>docker run –detach –name mysql –net mynetwork –env MYSQL_ROOT_PASSWORD=my-root-pw mysql:<span class="number">5.6</span><br></p></li></div><br>4.运行wordpress实例<p></p>
+
+
+<p>docker run –detach –name wordpress –net mynetwork –publish 80:80 –env WORDPRESS_DB_HOST=mysql –env WORDPRESS_DB_PASSWORD=my-root-pw wordpress:4.4<br>5.验证是否成功运行</p>
+<div class="dp-highlighter">
+
+<ol>
+<li><p>docker ps<br></p></li></ol></div><br>6.移除wordpress<p></p>
+<div class="dp-highlighter">
+
+<li><p>docker rm –force –volumes wordpress mysql<br></p></li></div><br>本例搭建的wordpress网站实例：<a href="http://172.99.79.236/" target="_blank" rel="external">点击访问</a><p></p>
+
+
+<p><strong>说明文档</strong>：<a href="https://getcarina.com/docs/getting-started/getting-started-carina-cli/?_ga=1.101275650.249986637.1477130428" target="_blank" rel="external">此处</a></p>
+<p><strong>所有镜像</strong>：<a href="https://hub.docker.com/explore" target="_blank" rel="external">此处</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.jpg" alt="home again WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="home again Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag">#docker</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/20.html" rel="next" title="textnow-虚拟电话，国外虚拟主机，vps申请必备">
+                <i class="fa fa-chevron-left"></i> textnow-虚拟电话，国外虚拟主机，vps申请必备
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/28/24.html" rel="prev" title="利用daocloud 搭建免费个人博客">
+                利用daocloud 搭建免费个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/28/22.html"
+           data-title="免费容器之carina" data-url="http://yoursite.com/2016/10/28/22.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="home again" />
+          <p class="site-author-name" itemprop="name">home again</p>
+          <p class="site-description motion-element" itemprop="description">世界上有不绝的风景,我有不老的心情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、注册"><span class="nav-number">1.</span> <span class="nav-text">一、注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、配置"><span class="nav-number">2.</span> <span class="nav-text">二、配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、搭建wordpress"><span class="nav-number">3.</span> <span class="nav-text">三、搭建wordpress</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">home again</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mvper"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

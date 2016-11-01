@@ -1,0 +1,730 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="免流," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="1. 添加EPEL源：
+&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #66d9ef;&amp;quot;&amp;gt;rpm &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #f8f8f2;&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openvpn云免教程——纯手工版">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/34.html">
+<meta property="og:site_name" content="免费资源分享">
+<meta property="og:description" content="1. 添加EPEL源：
+&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #66d9ef;&amp;quot;&amp;gt;rpm &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #f8f8f2;&amp;qu">
+<meta property="og:updated_time" content="2016-11-01T11:31:33.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="openvpn云免教程——纯手工版">
+<meta name="twitter:description" content="1. 添加EPEL源：
+&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #66d9ef;&amp;quot;&amp;gt;rpm &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;&amp;quot; style=&amp;quot;box-sizing: border-box; color: #f8f8f2;&amp;qu">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6347928475260683000',
+      author: '博主大人'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/28/34.html"/>
+
+
+  <title> openvpn云免教程——纯手工版 | 免费资源分享 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5e4566013c7bbd72d3e4f7977d4fd431";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">免费资源分享</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                openvpn云免教程——纯手工版
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-28T08:59:35+08:00" content="2016-10-28">
+              2016-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/4G免流/" itemprop="url" rel="index">
+                    <span itemprop="name">4G免流</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/28/34.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/34.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1. 添加EPEL源：</p>
+<pre><code>&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;rpm &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;ivh http&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;//www.sbwml.cn/yum/epel-release-6-8.noarch.rpm&lt;/span&gt;`&lt;/pre&gt;
+&lt;!-- more --&gt;
+2\. 更新yum软件：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;yum update&lt;/span&gt;`&lt;/pre&gt;
+3.配置iptables
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;iptables &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;F
+service iptables save
+service iptables restart
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -oeh0 -j MASQUERADE
+iptables -A INPUT -p TCP --dport 3389 -j ACCEPT
+iptables -A INPUT -p TCP --dport 80 -j ACCEPT
+iptables -A INPUT -P TCP --dport 22 -j ACCEPT
+iptables -A INPUT -p TCP --dprot 443 -j ACCEPT
+iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+service iptables save
+service iptables restart
+chkconfig iptables on&lt;/span&gt;`&lt;/pre&gt;
+4.关闭SELINUX：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;setenforce &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #ae81ff;&quot;&gt;0&lt;/span&gt;`&lt;/pre&gt;
+5.开启路由转发：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;vi &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;sysctl&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;conf
+net.ipv4.ip_forward = 1
+sysctl -p
+&lt;/span&gt;`&lt;/pre&gt;
+6.安装OpenVPN
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;yum install &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;y wget squid openssl openssl&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;devel lzo lzo&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;devel pam pam&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;deve automake pkgconfig
+yum install -y openvpn
+&lt;/span&gt;`&lt;/pre&gt;
+7.配置VPN服务端参数：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;openvpn&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;wget http&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;//www.sbwml.cn/yum/server.conf
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;chmod &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #ae81ff;&quot;&gt;0755&lt;/span&gt; &lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;/*.conf
+&lt;/span&gt;`&lt;/pre&gt;
+8.制作证书：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;openvpn&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;wget http&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;//www.sbwml.cn/yum/server.conf
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;chmod &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #ae81ff;&quot;&gt;0755&lt;/span&gt; &lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;/*.conf
+&lt;/span&gt;`&lt;/pre&gt;
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;openvpn&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;easy&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;rsa&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;source vars&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;ca   &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #93a1a1; box-sizing: border-box;&quot;&gt;#一路的回车
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;server server   &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #93a1a1; box-sizing: border-box;&quot;&gt;#一路的回车，提示输入y就跟着输入
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;key client   &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #93a1a1; box-sizing: border-box;&quot;&gt;#一路的回车，提示输入y就跟着输入
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;dh
+&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;cp &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;openvpn&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;easy&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;rsa&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/{&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;ca&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;crt&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box;&quot;&gt;&lt;span style=&quot;color: #66d9ef;&quot;&gt;client&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;.{&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;crt&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;}}&lt;/span&gt; &lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #66d9ef; box-sizing: border-box;&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;color: #f8f8f2; box-sizing: border-box;&quot;&gt;/
+&lt;/span&gt;`&lt;/pre&gt;
+将/home目录下的ca.crt、user01.crt、user01.key三个文件放到本地
+
+9.配置/启用端口转发：
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;squid&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;rm &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;f &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;squid&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;conf
+
+wget http&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #93a1a1;&quot;&gt;//www.sbwml.cn/yum/squid.conf&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;chmod &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #ae81ff;&quot;&gt;0755&lt;/span&gt; &lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;squid&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;squid&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;conf
+
+squid &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;z
+
+squid &lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #f8f8f2;&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;s&lt;/span&gt;`&lt;/pre&gt;
+10.启动openvpn
+&lt;pre class=&quot;&quot; style=&quot;box-sizing: border-box; overflow: hidden; font-family: &apos;courier new&apos;; font-size: 12px; padding: 10px 15px; margin-top: 20px; margin-bottom: 20px; line-height: 20px; color: #f8f8d4; word-break: break-all; word-wrap: break-word; border: none; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; font-stretch: normal; background-color: #272822;&quot;&gt;`&lt;span class=&quot;&quot; style=&quot;box-sizing: border-box; color: #66d9ef;&quot;&gt;service openvpn start
+&lt;/span&gt;
+</code></pre><p>11.免流文件模板 （ovpn格式）</p>
+<h1 id="免流"><a href="#免流" class="headerlink" title="免流"></a>免流</h1><p>setenv IV_GUI_VER “de.blinkt.openvpn 0.6.17″<br>machine-readable-output<br>client<br>dev tun<br>connect-retry-max 5<br>connect-retry 5<br>resolv-retry 60</p>
+<p>########免流Host########<br>http-proxy-option EXT1 “POST <a href="http://rd.go.10086.cn”" target="_blank" rel="external">http://rd.go.10086.cn”</a><br>http-proxy-option EXT1 “GET <a href="http://rd.go.10086.cn”" target="_blank" rel="external">http://rd.go.10086.cn”</a><br>http-proxy-option EXT1 “X-Online-Host: rd.go.10086.cn”<br>http-proxy-option EXT1 “POST <a href="http://rd.go.10086.cn”" target="_blank" rel="external">http://rd.go.10086.cn”</a><br>http-proxy-option EXT1 “X-Online-Host: rd.go.10086.cn”<br>http-proxy-option EXT1 “POST <a href="http://rd.go.10086.cn”" target="_blank" rel="external">http://rd.go.10086.cn”</a><br>http-proxy-option EXT1 “Host: rd.go.10086.cn”<br>http-proxy-option EXT1 “GET <a href="http://rd.go.10086.cn”" target="_blank" rel="external">http://rd.go.10086.cn”</a><br>http-proxy-option EXT1 “Host: rd.go.10086.cn”<br>http-proxy 公网ip 80</p>
+<p>########免流Host########<br>remote 公网ip 3389 tcp-client<br>resolv-retry infinite<br>nobind<br>persist-key<br>persist-tun<br>ca.crt 文件<br>user01.crt文件，部分<br>user01.key 文件<br>ns-cert-type server<br>comp-lzo<br>verb 3</p>
+<p>将刚才三个文件复制到这个模板的指定位置，将 公网IP换成自己的服务器ip。</p>
+<p>最后将这个.ovpn格式的文件发送到手机，通过openvpn软件打开。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.jpg" alt="home again WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="home again Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/免流/" rel="tag">#免流</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/32.html" rel="next" title="关于office365教育版账号的说明">
+                <i class="fa fa-chevron-left"></i> 关于office365教育版账号的说明
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/28/36.html" rel="prev" title="通过免流抓包写出模式">
+                通过免流抓包写出模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/28/34.html"
+           data-title="openvpn云免教程——纯手工版" data-url="http://yoursite.com/2016/10/28/34.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="home again" />
+          <p class="site-author-name" itemprop="name">home again</p>
+          <p class="site-description motion-element" itemprop="description">世界上有不绝的风景,我有不老的心情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#免流"><span class="nav-number">1.</span> <span class="nav-text">免流</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">home again</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mvper"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

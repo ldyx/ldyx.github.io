@@ -1,0 +1,714 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="本文将详细讲述如何利用虚拟机安装海蜘蛛软路由，实现宽带一号多拨，从而增加带宽。能否成功多拨因地区而异，本文实现的环境为江苏移动宽带（包年不限时）。按时付费的用户请勿轻易尝试，据了解，假若多拨后，时长会加速扣除。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给宽带免费提速">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/68.html">
+<meta property="og:site_name" content="免费资源分享">
+<meta property="og:description" content="本文将详细讲述如何利用虚拟机安装海蜘蛛软路由，实现宽带一号多拨，从而增加带宽。能否成功多拨因地区而异，本文实现的环境为江苏移动宽带（包年不限时）。按时付费的用户请勿轻易尝试，据了解，假若多拨后，时长会加速扣除。">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspfhgrs4ju192k1u3h1aur1i55a.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspfjru31c7r184g1rp316441m21a.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspfnccbein1d5sp4j1sja1uasa.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspfpkvtca21j6m1lru171sra.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspfr0j7kiv1a7g1us1d91ihta.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1asphhvlf1bt91fv9alv1lrc4uva.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1asphjmgcdm0c3sn1gtr7tesa.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1asphqhga1ro81vbs1agaj01sfsa.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1asphrge91odf11jj1ouf1q4l39aa.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspi12al92i1m981ndp1st41s6ca.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspi35757r6kk0gdu1gdph7ua.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspi891v1c031l2c1v3hlg11sl4a.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspilvecb2216gpgi38vbg21a.jpg">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspih5sqm4p8ctul3113pp85a.jpg">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspipe4413m91pvf4rd1731lnma.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspispbdgfapqbfl83ue1ts2a.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspj4af41pmpcj780n11pl1d7ea.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspkcusu13a51k49lnd1l8v1dela.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspkkk9bk9h1i9jq2meld9sia.png">
+<meta property="og:image" content="http://img.miaowei.name/o_1aspkm2m51pme4b51gsp1vvdmtka.png">
+<meta property="og:updated_time" content="2016-11-01T11:34:27.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给宽带免费提速">
+<meta name="twitter:description" content="本文将详细讲述如何利用虚拟机安装海蜘蛛软路由，实现宽带一号多拨，从而增加带宽。能否成功多拨因地区而异，本文实现的环境为江苏移动宽带（包年不限时）。按时付费的用户请勿轻易尝试，据了解，假若多拨后，时长会加速扣除。">
+<meta name="twitter:image" content="http://img.miaowei.name/o_1aspfhgrs4ju192k1u3h1aur1i55a.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6347928475260683000',
+      author: '博主大人'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/28/68.html"/>
+
+
+  <title> 给宽带免费提速 | 免费资源分享 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5e4566013c7bbd72d3e4f7977d4fd431";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">免费资源分享</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                给宽带免费提速
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-28T09:16:40+08:00" content="2016-10-28">
+              2016-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术教程/" itemprop="url" rel="index">
+                    <span itemprop="name">技术教程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/28/68.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/68.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文将详细讲述如何利用虚拟机安装海蜘蛛软路由，实现宽带一号多拨，从而增加带宽。<br>能否成功多拨因地区而异，本文实现的环境为江苏移动宽带（包年不限时）。按时付费的用户请勿轻易尝试，据了解，假若多拨后，时长会加速扣除。<br><a id="more"></a><br>如果你所地区还支持多拨，想要完美省事的多拨，可选购支持一线多拨的路由器。</p>
+<hr>
+<p><strong>步骤一：准备相应软件。</strong><br>所需软件：VMware，海蜘蛛软件。解压密码：www.miaowei.name</p>
+<p><strong>海蜘蛛V8（官方原版） 下载地址：<a href="http://pan.baidu.com/s/1mi8l6uG" target="_blank" rel="external">百度网盘</a>  提取码：mviw<br>VMware虚拟机 下载地址：<a href="https://www.baidu.com/s?wd=vmware%20workstation%2012&amp;rsv_spt=1&amp;rsv_iqid=0xcc6cfbea0012a35c&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;rsv_sug3=3&amp;rsv_sug1=3&amp;rsv_sug7=101&amp;rsv_t=376a8VEY8%2FDOKsDMkKhA9qCPrg3f0yyJQIKQET8HR0RpTfG3qIkjC5XARQtqMWZTCAX%2F&amp;sug=vmware%20workstation%2012&amp;rsv_n=1" target="_blank" rel="external">百度下载</a></strong></p>
+<hr>
+<p><strong>步骤二：建立虚拟机，用于安装海蜘蛛。</strong></p>
+<p><strong>1、开启虚拟机安装向导。</strong><br><a href="http://img.miaowei.name/o_1aspfhgrs4ju192k1u3h1aur1i55a.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspfhgrs4ju192k1u3h1aur1i55a.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>2、映像文件选择已下载的海蜘蛛V8。</strong><br><a href="http://img.miaowei.name/o_1aspfjru31c7r184g1rp316441m21a.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspfjru31c7r184g1rp316441m21a.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>3、操作系统选择Linux，版本随意。</strong><br><a href="http://img.miaowei.name/o_1aspfnccbein1d5sp4j1sja1uasa.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspfnccbein1d5sp4j1sja1uasa.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>4、选择虚拟机安装位置。</strong><br><a href="http://img.miaowei.name/o_1aspfpkvtca21j6m1lru171sra.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspfpkvtca21j6m1lru171sra.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>5、指定磁盘容量。软路由不需要很大空间，500M足够。选择存储为单个文件。</strong><br><a href="http://img.miaowei.name/o_1aspfr0j7kiv1a7g1us1d91ihta.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspfr0j7kiv1a7g1us1d91ihta.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>6、自定义硬件。</strong><br><a href="http://img.miaowei.name/o_1asphhvlf1bt91fv9alv1lrc4uva.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1asphhvlf1bt91fv9alv1lrc4uva.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>7、根据电脑硬件配置选择好内存和CPU。</strong><br>这里的 网络适配器 配置是关键。第一网络连接模式要选择 桥接。第二适配器数量决定了能够拨几次号，多添加几个。</p>
+<p><a href="http://img.miaowei.name/o_1asphjmgcdm0c3sn1gtr7tesa.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1asphjmgcdm0c3sn1gtr7tesa.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><a href="http://img.miaowei.name/o_1asphqhga1ro81vbs1agaj01sfsa.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1asphqhga1ro81vbs1agaj01sfsa.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p>至此，虚拟机添加完成，返回虚拟机页面，开启刚刚新建的虚拟机电源。</p>
+<hr>
+<p><strong>步骤三：安装海蜘蛛系统。</strong><br><strong>8、虚拟机开启后，进入海蜘蛛路由系统安装向导。</strong><br><a href="http://img.miaowei.name/o_1asphrge91odf11jj1ouf1q4l39aa.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1asphrge91odf11jj1ouf1q4l39aa.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p>9、安装过程中出现各种选项，如果不清楚作用，保持默认进入下一步即可。<br><a href="http://img.miaowei.name/o_1aspi12al92i1m981ndp1st41s6ca.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspi12al92i1m981ndp1st41s6ca.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p>10、下一步 至最后，路由系统安装完成。重启路由，便可运行路由。<br><a href="http://img.miaowei.name/o_1aspi35757r6kk0gdu1gdph7ua.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspi35757r6kk0gdu1gdph7ua.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p>至此，海蜘蛛路由系统安装完成。接下去通过本机访问路由。</p>
+<hr>
+<p><strong>11、设置本机IP。</strong><br>由于刚刚安装的路由默认管理地址为192.168.0.1，因此将本机IP设为192.168.0.20和路由同一网段。如图。<br><a href="http://img.miaowei.name/o_1aspi891v1c031l2c1v3hlg11sl4a.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspi891v1c031l2c1v3hlg11sl4a.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<hr>
+<p><strong>步骤四：配置海蜘蛛路由。</strong></p>
+<p><strong>12、访问海蜘蛛路由器。</strong><br>本机IP设好后，便可访问虚拟机里的路由器。管理地址为  <a href="http://192.168.0.1:880，管理员用户名和密码均为admin。" target="_blank" rel="external">http://192.168.0.1:880，管理员用户名和密码均为admin。</a></p>
+<p><strong>13、配置海蜘蛛路由器。</strong><br>进入路由器管理界面，会看到几个绿色的WAN端口，数量便是我们刚才添加的网路适配器数量。</p>
+<p>蓝色的wan口是因为没有设置成开机启动，点击进入设置成“开机自动启动”后变成绿色。<br><a href="http://img.miaowei.name/o_1aspilvecb2216gpgi38vbg21a.jpg" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspilvecb2216gpgi38vbg21a.jpg" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><a href="http://img.miaowei.name/o_1aspih5sqm4p8ctul3113pp85a.jpg" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspih5sqm4p8ctul3113pp85a.jpg" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>14、绑定网卡</strong>。<br>每一个WAN口需绑定一个网卡，点击WAN口图标进入后，选择“空闲”的网卡，然后绑定，这样才代表此WAN口可以正常工作。<br><a href="http://img.miaowei.name/o_1aspipe4413m91pvf4rd1731lnma.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspipe4413m91pvf4rd1731lnma.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>15、为每一个WAN口进行详细的设置。</strong><br>这里需要注意一个技巧，在设置时有一项“此网关作为默认路由”，我们只需要选择其中一个WAN口作为默认的即可，这样做的好处是即便多拨失败，也能确保有默认的WAN口拨号正常，降低了掉线的概率。<br><a href="http://img.miaowei.name/o_1aspispbdgfapqbfl83ue1ts2a.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspispbdgfapqbfl83ue1ts2a.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>16、设置好之后，在每一个WAN口配置里点击拨号。</strong><br><a href="http://img.miaowei.name/o_1aspj4af41pmpcj780n11pl1d7ea.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspj4af41pmpcj780n11pl1d7ea.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p><strong>17、多拨成功，在首页监控当前WAN口的工作状况。</strong><br><a href="http://img.miaowei.name/o_1aspkcusu13a51k49lnd1l8v1dela.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspkcusu13a51k49lnd1l8v1dela.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<hr>
+<p><strong>步骤五：实际测试</strong>。</p>
+<p>我的宽带为移动不限时20M，最大下载速度为2MB左右。利用海蜘蛛进行三拨后，理论带宽应该是60M，实际测得宽带速度接近这个值。</p>
+<p>360宽带测速测得最大下载速度为5.46MB/S<br><a href="http://img.miaowei.name/o_1aspkkk9bk9h1i9jq2meld9sia.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspkkk9bk9h1i9jq2meld9sia.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<p>迅雷下载最大速度为5.42MB/S<br><a href="http://img.miaowei.name/o_1aspkm2m51pme4b51gsp1vvdmtka.png" target="_blank" rel="external"><img src="http://img.miaowei.name/o_1aspkm2m51pme4b51gsp1vvdmtka.png" alt="" title="vmware安装海蜘蛛教程"></a></p>
+<div>多  拨  成  功！</div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.jpg" alt="home again WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="home again Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/66.html" rel="next" title="hap+终极防跳8免流模式安装使用教程">
+                <i class="fa fa-chevron-left"></i> hap+终极防跳8免流模式安装使用教程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/28/70.html" rel="prev" title="自定义百度网盘分享密码 提取码">
+                自定义百度网盘分享密码 提取码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/28/68.html"
+           data-title="给宽带免费提速" data-url="http://yoursite.com/2016/10/28/68.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="home again" />
+          <p class="site-author-name" itemprop="name">home again</p>
+          <p class="site-description motion-element" itemprop="description">世界上有不绝的风景,我有不老的心情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">home again</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mvper"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
