@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[ysdf]]></title>
-      <url>2016%2F11%2F03%2Fciv2797yl000hbkd20iy36te2.html</url>
+      <url>2016%2F11%2F03%2Fciv27bvd9000hiod2mbicowuo.html</url>
       <content type="text"></content>
     </entry>
 
@@ -68,7 +68,7 @@
     
     <entry>
       <title><![CDATA[openvpn云免教程——纯手工版]]></title>
-      <url>2016%2F11%2F03%2Fciv2797xt0008bkd2nr4mfka8.html</url>
+      <url>2016%2F11%2F03%2Fciv27bvcv0008iod24it6f0re.html</url>
       <content type="text"><![CDATA[纯手工搭建，按照教程一步一步来。觉得使用脚本安装太傻瓜化的，可以使用这一方法。并不推荐手工搭建，不过用来学习就在好不过了。1.添加EPEL源：1rpm -ivh http://www.sbwml.cn/yum/epel-release-6-8.noarch.rpm 2.更新yum软件：1yum update 3.配置iptables12345678910111213iptables -Fservice iptables saveservice iptables restartiptables -t nat -A POSTROUTING -s 10.8.0.0/24 -oeh0 -j MASQUERADEiptables -A INPUT -p TCP --dport 3389 -j ACCEPTiptables -A INPUT -p TCP --dport 80 -j ACCEPTiptables -A INPUT -P TCP --dport 22 -j ACCEPTiptables -A INPUT -p TCP --dprot 443 -j ACCEPTiptables -t nat -A POSTROUTING -j MASQUERADEiptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPTservice iptables saveservice iptables restartchkconfig iptables on 4.关闭SELINUX：1setenforce 0 5.开启路由转发：123vi /etc/sysctl.confnet.ipv4.ip_forward = 1sysctl -p 6.安装OpenVPN12yum install -y wget squid openssl openssl-devel lzo lzo-devel pam pam-deve automake pkgconfigyum install -y openvpn 7.配置VPN服务端参数：123cd /etc/openvpn/wget http://www.sbwml.cn/yum/server.confchmod 0755 ./*.conf 8.制作证书：123456789cd /etc/openvpn/wget http://www.sbwml.cn/yum/server.confchmod 0755 ./*.confcd /etc/openvpn/easy-rsa/source vars./clean-all./build-ca #一路的回车./build-key-server server #一路的回车，提示输入y就跟着输入./build-key client #一路的回车，提示输入y就跟着输入./build-dhcp /etc/openvpn/easy-rsa/keys/&#123;ca.crt,client.&#123;crt,key&#125;&#125; /home/ 将/home目录下的ca.crt、user01.crt、user01.key三个文件放到本地9.配置/启用端口转发：123456cd /etc/squid/rm -f ./squid.confwget http://www.sbwml.cn/yum/squid.confchmod 0755 /etc/squid/squid.confsquid -zsquid -s 10.启动openvpn1service openvpn start 11.免流文件模板 （ovpn格式） #免流setenv IV_GUI_VER “de.blinkt.openvpn 0.6.17″machine-readable-outputclientdev tunconnect-retry-max 5connect-retry 5resolv-retry 60 ########免流Host########http-proxy-option EXT1 “POST http://rd.go.10086.cn”http-proxy-option EXT1 “GET http://rd.go.10086.cn”http-proxy-option EXT1 “X-Online-Host: rd.go.10086.cn”http-proxy-option EXT1 “POST http://rd.go.10086.cn”http-proxy-option EXT1 “X-Online-Host: rd.go.10086.cn”http-proxy-option EXT1 “POST http://rd.go.10086.cn”http-proxy-option EXT1 “Host: rd.go.10086.cn”http-proxy-option EXT1 “GET http://rd.go.10086.cn”http-proxy-option EXT1 “Host: rd.go.10086.cn”http-proxy 公网ip 80 ########免流Host########remote 公网ip 3389 tcp-clientresolv-retry infinitenobindpersist-keypersist-tunca.crt 文件user01.crt文件，部分user01.key 文件ns-cert-type servercomp-lzoverb 3将刚才三个文件复制到这个模板的指定位置，将 公网IP换成自己的服务器ip。最后将这个.ovpn格式的文件发送到手机，通过openvpn软件打开。]]></content>
     </entry>
 
@@ -89,15 +89,8 @@
     
     <entry>
       <title><![CDATA[你天天用苹果，却不知道logo为何被咬了一口？]]></title>
-      <url>2016%2F11%2F03%2Fciv27980f0016bkd2e42g75n1.html</url>
+      <url>2016%2F11%2F03%2Fciv27bvdd000jiod29j1ayd15.html</url>
       <content type="text"><![CDATA[【编按】对许多人而言，苹果代表有简洁、优美、专注、创新等意象的连结，它可算是科技产业中一不断创造出故事的品牌，而这颗苹果所开创的亦不单单仅有品味如此简单，更有着那么一脉企图带领我们走在创造之路上的经典，但…关于这个经典我们了解了多少呢？LOGO 之于品牌可说是直接性的连结，那么苹果的 LOGO 为何被咬了一口呢？这就一起来在使用、欣赏它之外，进一步地对它多一些认识吧！坊间总是流传着我的传说… 苹果Logo 的演变史（中间有省略掉一些） 苹果标志的第一个阶段在1976 年，史蒂夫．沃兹尼亚克(Steve Wozniak)和史蒂夫．乔布斯(Steve Jobs)设计并打造了第一台家用计算机Apple I。当时苹果公司的第一商标设计者是罗纳德．韦尼(Ronald Wayne)，他所设计的苹果商标并不像现在这样的，而是无论在整个设计上、图形上，还是文字上都显得十分的复杂。整个商标以金属的外观表现出一种带有厚重感的视觉，而这也许是因为当时的计算机都是以厚重为主吧？！或结实笨重的造型才能被当时所接受？！在图形的选择上以牛顿坐在苹果树下读书为图案，一个苹果从树上掉下来，也许是想告知观者，牛顿因为苹果发现了万有引力，而我们发明了苹果电脑。而在商标图案上还有飘带上下缠绕，写着Apple Computer Co. 的字样，外框上则引用了英国诗人威廉．华兹华斯(William Wordsworth)的短诗「牛顿，一个永远孤独地航行在陌生思想海洋中灵魂。」这也进一步地表达了苹果公司的探索精神，成就了日后的苹果公司！ 苹果标志的第二个阶段 同样是在1976 年，由于此商标在造型上过于复杂，没有过多的品牌识别度，怕影响苹果公司的销售，因此在苹果公司的研究下，乔布斯重新聘请Regis McKenna 顾问公司的罗勃．简诺夫(Rob Janoff)为苹果设计一个新的标识。 1977 年的Rob Janoff 当被问：当时大部分的Logo 都是单色或只有两个颜色， 你们却用七彩间纹设计苹果Logo， 有人反对吗？Rob Janoff 说道：现在看那个Logo 其实并不会感觉具革命性的，但当时不一样。我确实听到了来自我们公司内部的很多反对的声音。其中一个还是公司的上层，他说如果这个新的公司要生产这么多种颜色的产品，那估计它没开业就倒闭了。虽然这就是我当时面对的一种反对意见，但是，乔布斯很喜欢。我后来知道，乔布斯是一个很有洞察力的人，他喜欢这个Logo 的个性化。在那个年代，电脑是让人感觉很高科技的东西，而生产电脑的人也喜欢给电脑取个类似什么TRS-80 这类的名字，而乔布斯要让人们觉得电脑并没有那么高深，因此便将电脑的名字叫做苹果并配上那个Logo。 苹果标志的第三个阶段 在1998 年，苹果在一次更换了自己的标识，整个商标在外形上并没有进行过多的变化，还是那个大家熟悉的被咬了一口的苹果，只将原来那彩色的彩虹外衣换成了一个半透明、泛着金属光泽的银灰色标识。让整个商标看上去更加具有质感，而这便表示出了苹果已经脱去了华丽的外壳，走向更为成熟的标志。 苹果标志的第四个阶段 而第四个苹果商标大家一定再熟悉不过了，在大街小巷只要您是拿这苹果手机就能看到这个富有透明效果的苹果商标。而这款商标也从原来金属感强烈的设计转变成玻璃透明效果般的苹果。而这也是整个透明的苹果商标改变了人们的生活方式，让人们快速的从电脑的PC 网络时代跃进到手机网络的时代，让我们从单一的移动电话生活变成了丰富多彩的智能时代。在这里我们不的不感谢苹果公司为我们带来了更加丰富的生活方式，而这也是苹果商标正企图改变我们每个人生活的方式。 苹果标志的第五个阶段 采用了更具科技感、扁平化的设计。 而关于这个LOGO 的外廓设计，苹果为什么被要了一口，坊间亦一直流传着各种各样的版本～ 版本###传奇版开头是很伟大的盟军发起了一个代号ULTRA 的绝密行动，费尽心机，得到了德国最机密的通讯密码机，为此，由英国剑桥大学一位年轻的毕业生图灵为首，建造了世界上第一台真正的计算机，从而破获了德国自以为无法被破解的密码，完全掌握了德国潜艇部队的秘密，最终灭了德国海军，为提前打败德国，做出了决定性的贡献。但是，故事的结尾却不尽美好参与行动的4 位关键人物的下场都相当不幸。研究出密码破译基础算法的波兰人雷耶夫斯基，战后不被党信任，被发配当了个企业经理，一生再没机会做密码研究；破解了日本绝密密码的弗里德曼，战后神经崩溃，终生为一个问题所困扰：为什么美国政府不利用他破解的日本密码，预测到珍珠港事件；向盟军要了一万美元，就出卖了德国密码机的施密特，42 年就被德军发现枪毙了；但比较而言，艾伦·图灵的命运，又最为悲惨。战争结束后，他回到剑桥大学，过着同性恋的隐秘生活，当时的同性恋，在英国被视为重罪。1952 年，他因与一名19 岁男子有性交而被捕。英国政府给他两个选择，要么坐牢，要么接受医学实验性质的激素治疗，以根除同性恋情结。1954 年6 月8日，图灵42 岁，正逢他生命中最辉煌的时刻。一天早晨，女管家走进他的卧室，发现台灯还亮着，床头上还有个苹果，只咬了一小半，图灵沉睡在床上，一切都和往常一样。但这一次，图灵永远地睡着了，不会再醒来……经过解剖，法医断定是剧毒氰化物致死，那个苹果，是在氰化物溶液中，浸泡过的。但外界的说法，是服毒自杀，图灵再也无法忍受，图灵便在自己家中的实验室，配置了一种氰化物药剂，将其注射到一颗苹果里，咬了一口苹果。在短短几分钟内，他就这么死去了，一代天才，就这样走完了他的人生。而在他去世约四年后，英国取消了将同性恋定罪的法令。历史完全有理由永远记住图灵这个名字，不是因为他在ULTRA 行动中所扮演的重要角色，而是因为，他为开辟信息时代的计算机技术做出了卓越贡献。又在他去世大约20 年后，图灵的粉丝乔布斯，把公司起名为苹果，并且以被咬了一口的苹果，作为标志。 谐音版在英语中「咬（bite）」与计算机的基本运算单位字节（Byte）同音。 西红柿or 樱桃版最初，简诺夫绘制了一颗苹果的图案，然而乔布斯希望苹果图案上能出现一个缺口，这样看起来更像是苹果而不会被误以为是樱桃或是西红柿。 探索版毛泽东说「要想知道梨子的滋味，就要亲口尝一尝。」一颗色彩柔和，被咬掉一口的苹果，正表现出You can own your computer (你能够拥有自己的计算机)的亲切感。被咬了一口的苹果也证明出它的价值观「拒绝将计算机神化。苹果是人机关系中离经判道的先行者，人们将不再崇拜或恐惧计算机，而是将之视为一种娱乐。因此该品牌名称符合后来越变越明显的初始想法」而这种新的标准便被加以确立。在西方语意里面，苹果不是一种单纯的水果，也不是一般意义上的水果，而是一种智慧之果。圣经上就有这么一段，蛇告诉夏娃说：「如果你们吃了智慧树上的果子就会发现善恶有别，就会跟上帝一样，上帝就是因为这个理由而不让你们吃这果子的。 」亚当和夏娃就是吃了苹果才变得有思想，现在引申为科技的未知领域。苹果公司的标志是咬了一口的苹果，表明了他们勇于向科学进军，探索未知领域的理想。被咬的这一口，为什么是右边不是左边？来自知乎黄芳莉 这是国外网站上经常被引用的图片（真实性有待深究）。但我们姑且视之为设计解析结构图来看：但也仅仅是解释为LOGO 的构成与比例，而没有解释清楚为什么是在右边…仅从自己是设计师的角度出发，多年前阅读两篇报导，一篇是关于「人脑和身体的惯性习惯思维与动作」，以及「左右半脑的功能区」，总结来说当中印象最鲜明的观点也是令我唯一记得的一些表述是：当人在陌生的城市行走，迷路或者散步－右转的次数会躲过左转的次数跑步时，掌握右转弯的平衡会比左转弯来的相对容易右撇子的人数高过左撇子……当与一些现实例子做比较时，很难控制自己去不发生联想：是否与人性本质的自然选择有所关联「如果发生伤害，身体右边区域的伤害相对更为安全因为心脏在左边」等等，先不谈自己对过往设计案例的回想分析，但从国际大品牌而言，真的有很多的设计（非对称设计）有着明显的「亲右」的特性。 1976年至今，苹果一直使用这一LOGO，虽然表面形态上它经历了从彩色变为高光，继而向扁平化发展成为剪影，但是其外形轮廓仍保持着罗勃·简诺夫的设计，将苹果代表的简洁、优美、专注、创新表达给全球的用户，以苹果为伴一路走向世界巅峰，相互成就出经典。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[ishadowsocks提供免费ss服务，每6小时更换一次密码]]></title>
-      <url>2016%2F11%2F03%2F11033.html</url>
-      <content type="text"><![CDATA[ishadowsocks是ss界非常知名的免费ss账号提供者，有很多人都使用这上面的免费ss账号。ishadowsocks每隔6小时会更改密码，所以有人就制作了python爬虫，自动获取iss免费账号。iss官网：http://www.ishadowsocks.org因为有很多人在使用该账号，虽然有三个服务器，但是无奈使用人数众多。观看youtube应该不是很理想。 A服务器位于：美国B服务器位于：香港C服务器位于：日本 iss提供的服务器稳定可靠，值得爬取。]]></content>
     </entry>
 
     
@@ -105,6 +98,13 @@
       <title><![CDATA[台湾edu邮箱申请以及office365在线教育版申请]]></title>
       <url>2016%2F11%2F03%2F11032.html</url>
       <content type="text"><![CDATA[教育邮箱（即edu邮箱）education（教育）的简写edu，拥有很多的优惠福利。教育邮箱是一种你是从事教育相关行业（包括教师和学生）的证明。福利包括dreamspark，github学生包（最著名的优惠是digitalocean的50美元信用），bestbuy好像也有一定的优惠。本篇介绍的是如何免费申请到edu邮箱并以此申请到office365在线教育版。 一、申请账号###1、注册注册地址：https://www.tp.edu.tw/member/law.jsp ###2、填写信息身份证号，邮编号请自行百度“台湾身份证”。验证邮箱建议gmail，再差也不要国内邮箱。 3、完成 二、edu申请1、申请邮箱填写你的邮箱，用来收信验证 2、验证在gamil里收信”mvper“显示成“甄董舜”？ 3、登陆登陆账号为你的用户名 登陆后可以看到欢迎信件 申请成功！可以看到我的edu邮箱是：mvper@tp.edu.tw 三、申请office365注意：该版本为在线教育版。没有桌面应用授权在线版的office365比较有价值的地方应该就是提供了1T的onedrive网盘了吧。微软网盘不用担心像我们国内一样倒掉。 1、注册注册地址：https://portal.office.com/signup?sku=Education使用你刚申请到的edu邮箱。学生老师无所谓，功能都差不多。 通过后回到edu.tw邮件系统界面，收件 3、收件 快成功了！ 4、一些设置 office365新添加的邀请功能，直接跳过。 5、其他竟然有管理员？ 不用高兴了，你又没有tp.edu.tw域名的所有权。就算有，也就是个教育版的。在线教育版全局管理员……不是要多少有多少。之后再写吧。 四、其他优惠1、Microsoft DreamSpark。可获取开发工具:Visual Studio Professional ，Windows Embedded 8.1 Industry Pro with Update等。服务器系统和应用程序:SQL Server ，Windows Server ，Windows Virtual PC等。2、GitHub Student Developer Pack。DigitalOcean 云主机 50美元、dnsimple 两年DNS管理、GitHub 5个私有仓库两年、HackHands 25美元、Namecheap .me域名 1年 SSL证书 1年、Microsoft Azure等等。3、AutoDesk Educational license。可以获得AutoCAD、3ds Max、Maya等在内70余款软件的3年免费使用权4、JetBrains Toolbox 专业开发工具学生免费授权计划。免费学生授权包含所有 JetBrains Toolbox 下的专业开发工具：IntelliJ IDEA Ultimate，ReSharper Ultimate 和所有集成开发工具。5、当然国内也有一些主机商针对学生群体优惠，虽然不需要.edu邮箱，但是需要学生证明材料：学生免费领取腾讯云主机和.CN域名 。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[ishadowsocks提供免费ss服务，每6小时更换一次密码]]></title>
+      <url>2016%2F11%2F03%2F11033.html</url>
+      <content type="text"><![CDATA[ishadowsocks是ss界非常知名的免费ss账号提供者，有很多人都使用这上面的免费ss账号。ishadowsocks每隔6小时会更改密码，所以有人就制作了python爬虫，自动获取iss免费账号。iss官网：http://www.ishadowsocks.org因为有很多人在使用该账号，虽然有三个服务器，但是无奈使用人数众多。观看youtube应该不是很理想。 A服务器位于：美国B服务器位于：香港C服务器位于：日本 iss提供的服务器稳定可靠，值得爬取。]]></content>
     </entry>
 
     
