@@ -87,7 +87,7 @@
 <meta name="description" content="除了VPN，shadowsocks等等，还有其他很多方法访问谷歌，比如在线代理软件glype，可以充分利用免费无限量流量的虚拟主机。这里介绍另外一种方法：谷歌镜像。优点：1.可观看youtube 2.镜像众多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谷歌镜像站点搜集">
-<meta property="og:url" content="http://yoursite.com/2016/11/03/11031.html">
+<meta property="og:url" content="http://mvper.cn/2016/11/03/11031.html">
 <meta property="og:site_name" content="免费资源分享">
 <meta property="og:description" content="除了VPN，shadowsocks等等，还有其他很多方法访问谷歌，比如在线代理软件glype，可以充分利用免费无限量流量的虚拟主机。这里介绍另外一种方法：谷歌镜像。优点：1.可观看youtube 2.镜像众多">
 <meta property="og:image" content="http://ofyq29aeh.bkt.clouddn.com/%29IUF%25AP4U9~ZW_P%7D%60I%601RVQ.png">
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/03/11031.html"/>
+  <link rel="canonical" href="http://mvper.cn/2016/11/03/11031.html"/>
 
 
   <title> 谷歌镜像站点搜集 | 免费资源分享 </title>
@@ -334,6 +334,15 @@
 
           
           
+             <span id="/2016/11/03/11031.html" class="leancloud_visitors" data-flag-title="谷歌镜像站点搜集">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
           
         </div>
@@ -415,12 +424,15 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/11/03/11031.html"
-           data-title="谷歌镜像站点搜集" data-url="http://yoursite.com/2016/11/03/11031.html">
+           data-title="谷歌镜像站点搜集" data-url="http://mvper.cn/2016/11/03/11031.html">
       </div>
     
   </div>
@@ -465,7 +477,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -785,6 +797,113 @@
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("uD3rl0JKbxWciXBpxmygoJNe-gzGzoHsz", "P3FbNfcCmTAGVsKfCa38prqq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
